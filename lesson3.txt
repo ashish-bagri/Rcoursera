@@ -1,0 +1,101 @@
+applying functions to loop elemets
+functions with name apply
+
+lapply: apply a given method to every elemet in a list
+remember, every element in a list can be of a different kind
+eg, it can be a vector or matrix etc
+mylist <- list(a=1:10, b= rand(10))
+and can do lapply on mylist a method like mean 
+the return of lapply is always a list with same names of elemets as original list
+
+first input to lapply is a list.
+second input is the method to apply
+it follows with variable num of args (...) that are passed directly to the 
+method that is called with each element of the list
+
+lapply is also used with anonymous functions
+the function can be defined itself in the call
+lapply(x, function(elt) elt[,1])
+
+sapply -> simplifies the result 
+instead of returning the list, 
+it tries to change it to vector if all elements is a single num
+changes to matrix if each ele is a vector of fixed length
+else, just return the list
+
+apply
+works on the MARGIN of arrays
+typically used on matrices
+apply(x, MARGIN, FUNCTION, ..)
+x->array
+margin - defines the dimension than needs to be retained
+
+if you use 2 as margin in a 2d matrix, it takes the 2nd dimension of the matrix =, which is the column dimension and applies the function to the columns
+
+apply(x, 2, mean)
+get mean for each of columns
+
+apply(x, 1, sum) 
+get sum of all rows
+
+works on matrices
+inbuilt methods:
+rowsums
+rowmeans
+colsum
+colmeans
+
+arrays :
+multiple dimensions
+array(rnorm(2*2*10), c(2,2,10)) -- 2x2x10 dim
+apply(a, c(1,2), mean) ==> keep dim 1 and dim 2 and collapse the 3rd dimension
+so average over the 3rd dim
+
+
+mapply 
+------------
+applies methods to multiple lists
+mapply(noise, 1:5, 1:5, 2)
+calls noise with 1,1,2; 2,2,2; 3,3,2; etc
+
+tapply
+-------------
+apply a function to subsets of vector
+tapply(x, index, function , ..., simplify=true)
+x - vector
+index - the different subsets you want to divide the x in. should be of same len as x
+
+for factor variable: can use gl method
+gl (3, 10) --- 3 group of 10 elements
+
+
+split -
+not a loop function but useful
+split(x, factor, drop=false)
+splits the vector x in factor defined in factor
+
+colMeans(x[, c("colname1", "colname2")] -> mean over colname1 and colname2 
+
+interaction method to combine the levels from 2 different levels
+
+
+***************************
+debugging levels
+message : a general message produced. not fatal. produced by message() method
+
+warning: gives a warning, does not stop execution. creates an output and gives the warning 
+example log of negative numbers 
+
+
+functions return invisible. does not print the return variable to console
+
+print functions always returns the string that it prints. but it returns invisible so that it is not seen on console (twice)
+
+
+debugging tools;
+traceback : stack trace 
+recover: error handler. when error is encountered, R stops the execution, prints the stack and then you can look around the stack !?
+debug: give it to a method. it flags that method and suspends that method whenever it is called. you can step through then 
+browser: like a break point
+trace: insert debugging code in a function without editing the method ! 
+

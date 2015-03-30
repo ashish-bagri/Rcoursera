@@ -1,0 +1,40 @@
+c -> concatinate method
+T, F shorthand true false
+6:9 sequence
+vector method
+as.numberic()
+as.character()
+LIST -> each ele can have different type
+[[]] -> index 
+matrix (rows, cols)
+factor -> like enums
+table -> freq count
+unclass -> underneath values of factors
+levels -> types of values in the factor
+is.na()
+is.nan()
+data frame = tabular data
+row.names
+read.table. read.csv
+data.matrix - from data frame
+names - each element can have names
+
+subsetting : taking a slice out of the array 
+[ -> always the same class as the original- can be used to extract multiple objects
+[[ -> only extract the single elemet from list or data frame
+$ used to extract similar to [[ but with name of element
+
+partial matching 
+works with [[ and $ 
+$ does partial matching by default
+[[ you must specify exact = FALSE to allow partial matching
+
+removing na values
+create a logical vector 
+bad <- is.na(x)
+x[!bad] gives back the vector without na 
+
+complete.cases(x,y) -> applied on 2 vectors and gives back the places where no missing values
+
+complete.cases on data frame with no missing values 
+

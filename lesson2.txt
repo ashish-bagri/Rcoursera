@@ -1,0 +1,46 @@
+seq_along(x) creates a vector with index of x.
+can use in loop with for (i in seq_along(x) print x[i]
+
+can also do for (letter in x) print letter for the content directly
+
+seq_len -> creates a sequence of the length 
+used in 2d looping
+
+mean has na.rm bool param
+last statement is the return value
+args(func) gives back the arguments of the function
+
+function args are evaluated lazily. if one of the params are not used, it need not be specificed in the function call. it will not throw any error
+
+... used as variable number of arguments when extending an existing function
+also used in 'generic functions'
+method - paste has the first args as ... can paste multiple strings together 
+all args after ... must be named. it cannot be partially matched (makes sense as R cannot know if its for ... or for position)
+
+binding and scoping :
+
+when binding, it searched through environments. 
+search global env. then searches through a search list. can be seen by search() on command line.
+
+global -> users workspace
+base package is last !
+
+functions and variables have separate workspace
+
+as.Date("1970-01-01") to convert to Date object ! 
+
+unclass -> #days since 1970/01/01
+gives the underlying object
+
+POSIX ct and POSIXlt standard for time
+ct-> seconds since etc
+lt-> stores as list under the hood. keeps the data as dow, doy, month etc ! more informatic for analysis 
+as.POSIXlt()
+as.POSIXct()
+makes the conversion
+Sys.time () and can be converted etc
+names(unclass(x)) underlying data structure of x
+strptime -> to convert formatted string to time objects
+?strptime for details 
+ 
+

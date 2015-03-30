@@ -1,0 +1,45 @@
+gl <- to generate a factor level
+
+str() method to get a snapshot of the data
+
+## random numbers
+
+rnorm  random normal varaites with given mean and sd
+dnorm evaluate the normal probability density woth given mean and sd at a point 
+pnorm eval cumulative distribution func for a normal distribution 
+rpois random poisson variates with a given rate 
+
+
+for every distribution ==
+d density
+r random
+p cumulative
+q quantile 
+
+for possion, rate == mean 
+rpois(10,1)
+
+samples data form a distribution 
+sample method. replace=TRUE when replacement 
+
+from specific prob distribution with r* functions
+
+elapsed time: wall clock time
+yser time: processig time by cpu
+
+system.time ( ) method to get timing info 
+
+Rprof() profiler
+summarize R profiler
+smmaryRprof()
+by.total divids the total time --. top level functions will be called by 100%
+by.self() subtracts the low level function calls
+
+
+
+do not use system time and r prof together
+
+prints out function call stakcs 
+at 0.02 seconds
+
+
